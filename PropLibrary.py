@@ -33,10 +33,10 @@ peroxide90 = rocketcea.blends.newOxBlend(oxL=['H2O2', 'H2O'], oxPcentL=[90,10])
 # aniline
 card_str = """
 fuel C6H7N(L)  C 6.0   H 7.0    N 1.0  wt%=100
-h, kj/mol=31.3    t(k)=298.15   rho=1.03 
+h,kj/mol=31.3    t(k)=298.15   rho=1.03
 """
-add_new_fuel( 'aniline', card_str )
-aniline = rocketcea.blends.newFuelBlend(fuelL=['aniline'], fuelPcentL=[100]) 
+add_new_oxidizer( 'aniline', card_str )
+aniline = rocketcea.blends.newOxBlend(oxL=['aniline'], oxPcentL=[100])
 
 
 # furfurylalcohol

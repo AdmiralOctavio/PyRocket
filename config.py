@@ -23,7 +23,7 @@ import PropLibrary as proplib
 
 
 # CEA input
-fuel            = 'RP-1'               # choose existing fuel or oxidiser from rocketcea or create new fuel or oxidiser blend in PropLibrary
+fuel            = proplib.ethanol98               # choose existing fuel or oxidiser from rocketcea or create new fuel or oxidiser blend in PropLibrary
 ox              = 'N2O'
 hot_gas_method  = 'cinjarev'                         # use either 'cinjarev', 'standard-bartz' or 'modified-bartz'
 
@@ -36,9 +36,9 @@ m_dot_ox        = m_dot - m_dot_f
 Pc              = 10e5                               # Chamber pressure [Pa]
 
 # Coolant input
-cooling_fluid   = ['n2o']                            # needs to be list of str
+cooling_fluid   = ['c2h5oh']                            # needs to be list of str
 fluid_mass_frac = [1.0]    			                 # mass fractions of the cooling fluid (needs to add up to 1)
-m_dot_coolant   = m_dot_ox                 		 	 # mass flow through the cooling channels
+m_dot_coolant   = m_dot_f                 		 	 # mass flow through the cooling channels
 inlet_temp      = 288.0                     		 # inlet temperature [K]
 inlet_pressure  = 60e5                               # Cooling channel inlet pressure [Pa]
 
@@ -77,14 +77,14 @@ start_idx = -1										 # starting index, use 0 for injector side and -1 for no
 cell_size    = 0.15 * t_w_i                          # cell size in 2D section solver, will heavily impact performance
 time_step    = (cell_size)**2 / (material.alpha)     # time step in 2D section solver (cell_size)**2 / (material.alpha)
 adaptive_up  = 1.4                                   # UP factor for adaptive time step. Increase for faster convergence but less stability
-tolerance    = 1e-2                                  # maximum temperature differnece between time steps
+tolerance    = 1e-2                                  # maximum temperature difference between time steps
 max_iter     = 300									 # maximum number of iterations before termination
 save_fig     = True                                  # save figures to folder in Output Class
 print_result = True                                  # print intermittant maximum temperatures, useful for DEBUGGING
 run_time     = 'steady_state'                        # use 'steady_state' as default. use time in [s] if transient solution is desired
 
 
-# add thermocouple locations for model validation (effecively temperature logging points in the 2D solution)
+# add thermocouple locations for model validation (effectively temperature logging points in the 2D solution)
 log_TC = False                                       # temperature at thermocouple locations is to be logged
 TC_x   = [10e-3, 20e-3, 30e-3]                       # x coordinate of thermocouples 
 TC_r   = [36e-3, 36e-3, 36e-3]                       # radial position of thermocouples               
