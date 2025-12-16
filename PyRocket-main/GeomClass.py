@@ -110,7 +110,6 @@ class ChamberGeometry():
         xy = np.genfromtxt('PyRocket-main\Contour.csv', delimiter = ',', skip_header=1) # Set directory as needed.
         x = xy[:,0]
         y = xy[:,1]
-        print(x)
         x_uniform = np.arange(x.min(), x.max(), self.dx)
         y_uniform = np.interp(x_uniform, x, y)
         self.x = x_uniform
