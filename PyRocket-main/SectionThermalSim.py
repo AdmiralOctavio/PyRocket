@@ -114,6 +114,8 @@ class HeatEquationSolver():
         # create mesh nodes and boundary conditrions
         x, y = mesh.faceCenters
         self.boundary_conditions(mesh, phi, x, y)
+        plt.scatter(x, y)
+        plt.show()
 
         # Equation to solve
         eq = TransientTerm() == DiffusionTerm(coeff=self.material.alpha)

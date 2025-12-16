@@ -37,6 +37,7 @@ class ChamberGeometry():
         # generate chamber countour x, y coordiantes
         
         # Cylindrical section
+        '''
         x_cyl = np.arange(0, self.L_cyl, self.dx)
         y_cyl = np.ones(len(x_cyl)) * self.D_c / 2
 
@@ -100,6 +101,20 @@ class ChamberGeometry():
         # create 2 dimensional array containing all coordinates
         xy = [[self.x[i], self.y[i]] for i in range(len(self.x))]
         self.geometry = np.vstack(xy)
+        plt.plot(self.x, self.y)
+        plt.axis('equal')
+        plt.show()
+        '''
+        
+        # This is meant to be able to import external CSV chamber contours.
+        xy = np.genfromtxt('PyRocket-main\Contour.csv', delimiter = ',', skip_header=1) # Set directory as needed.
+        x = xy[:,0] / 1000
+        y = xy[:,1] / 1000
+        x_uniform = np.arange(x.min(), x.max(), self.dx)
+        y_uniform = np.interp(x_uniform, x, y)
+        self.x = x_uniform
+        self.y = y_uniform
+        self.geometry = np.vstack([self.x, self.y]).T
 
 
     def plot_contour(self, path=False):

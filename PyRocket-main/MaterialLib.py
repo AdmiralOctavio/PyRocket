@@ -81,7 +81,7 @@ E = 1							# youngs modulus [Pa]
 a = 1							# thermal expasion coefficinent [1/K]
 sig_u = 1                  		# ultimate strength [Pa]
 eps = 0.8						# thermal emissivity
-roughness = 2.3e-5				# effective roughness height [m] from SLM Solutions
+roughness = 5e-5				# effective roughness height [m] from SLM Solutions - 5e-5 - 1e-4 range for 3D print. 2.3e-5 for smooth
 alpha = k / rho / Cp			# thermal diffusivity [m^2/s]
 CuCr1Zr = Material('CuCr1Zr', alpha, k, rho, Cp, v, E, a, eps, sig_u, roughness)
 
