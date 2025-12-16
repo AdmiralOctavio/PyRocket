@@ -23,7 +23,7 @@ import PropLibrary as proplib
 
 
 # CEA input
-fuel            = proplib.ethanol98               # choose existing fuel or oxidiser from rocketcea or create new fuel or oxidiser blend in PropLibrary
+fuel            = proplib.ethanol90               # choose existing fuel or oxidiser from rocketcea or create new fuel or oxidiser blend in PropLibrary
 ox              = 'N2O'
 hot_gas_method  = 'cinjarev'                         # use either 'cinjarev', 'standard-bartz' or 'modified-bartz'
 
