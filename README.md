@@ -1,2 +1,4 @@
 This is a fork of Jonathan Neeser's original thermal simulation for chamber cooling design. The only changes made here are to import chamber contours, so you are no longer limited to conical/parabolic estimations, and to update deprecated numpy functions.
 I suggest using Anaconda for managing imports, as pip doesn't work for me. This also requires GMSH, which can be annoying to get working at times.
+
+I suggest reading the original readme file for how to use this software.
